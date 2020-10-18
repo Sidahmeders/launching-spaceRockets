@@ -1,0 +1,19 @@
+{
+  "name": "spacex_lauches",
+  "version": "1.0.0",
+  "description": "app that request spacex rockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+
+  },
+  "author": "Sodium",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0"
+  }
+}
