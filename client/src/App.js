@@ -1,6 +1,7 @@
 import React from 'react';
 import {gql, useQuery} from '@apollo/client';
 import './styles/App.css';
+import Launches from './components/launches';
 
 
 
@@ -18,22 +19,11 @@ function App() {
   const {loading, error, data} = useQuery(rocketsQuery);
   return (
       <div className="App">
-        <h1>Hello World</h1>
+        <h1>SPACE-X Launches</h1>
         {
           loading ? <h2>Loading...</h2> :
           (error ?  <h3>ERROR: not A Rocket Found</h3> :
-           <div>
-             {data.rockets.map(r => {
-               return (
-                 <div key={r.rocket_id} style={{
-                   color:"white",
-                 }}>
-                   <h2>{r.rocket_name}</h2>
-                   <h3>{r.rocket_id}</h3>
-                 </div>
-               )
-             })}
-            </div>
+            <Launches data={data} />
           )
         }
       </div>

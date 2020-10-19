@@ -1,0 +1,12 @@
+
+.launches .rocket {
+    border: solid 1px white;
+    margin: 10px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 10px;
+}
+
+.launches p {
+    color: beige;
+    font-size: 22px;
+}
