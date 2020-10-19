@@ -20,13 +20,20 @@ function App() {
       <div className="App">
         <h1>Hello World</h1>
         {
-          loading ? <div>loading..::..</div> : (
-            error ? <h2>Error:::</h2> : data.rockets.map(({rocket_name, rocket_type, rocket_id}) => (
-              <div key={rocket_id}>
-                <p>{rocket_name}</p>
-                <p>{rocket_type}</p>
-              </div>
-            ))
+          loading ? <h2>Loading...</h2> :
+          (error ?  <h3>ERROR: not A Rocket Found</h3> :
+           <div>
+             {data.rockets.map(r => {
+               return (
+                 <div key={r.rocket_id} style={{
+                   color:"white",
+                 }}>
+                   <h2>{r.rocket_name}</h2>
+                   <h3>{r.rocket_id}</h3>
+                 </div>
+               )
+             })}
+            </div>
           )
         }
       </div>
